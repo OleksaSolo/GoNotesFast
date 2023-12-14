@@ -1,5 +1,5 @@
-# GoNotesFast
- Notes FastAPI
+# GoNotesUserFast
+ Notes User FastAPI
 
 poetry add fastapi
 
