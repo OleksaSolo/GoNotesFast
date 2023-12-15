@@ -33,7 +33,43 @@ src/routes/contacts.py
 src/repository/contacts.py
 
 
+uvicorn main:app --host localhost --port 9000 --reload
+
+module 12
+
+poetry add libgravatar
+poetry add python-jose["cryptography"]
+poetry add passlib["bcrypt"]
+poetry add python-multipart
+
 uvicorn main:app --host localhost --port 8000 --reload
+
+edit src/database/models.py
+edit src/schemas.py
+src/repository/users.py
+src/services/auth.py
+
+alembic revision --autogenerate -m 'Init'
+alembic upgrade head
+
+src/routes/auth.py
+
+in main.py add:
+app.include_router(auth.router, prefix='/api')
+
+edit src/repository/contacts.py
+
+edit src/routes/contacts.py
+
+не забувати про:
+alembic revision --autogenerate -m 'Init'
+alembic upgrade head
+
+
+
+
+
+
 
 
 
